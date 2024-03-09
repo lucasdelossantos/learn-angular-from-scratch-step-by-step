@@ -5,6 +5,7 @@ WORKDIR /src/app/lafs
 
 FROM build as dep
 # Install app dependencies
+RUN apk update && apk add --no-cache bash
 COPY package*.json ./
 RUN npm install -g @angular/cli@v6-lts
 RUN npm install
